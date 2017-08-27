@@ -29,6 +29,8 @@ module Honeybadger
                 opts[:component] = params['wrapped'.freeze] || params['class'.freeze] if config[:'sidekiq.use_component']
                 Honeybadger.notify(ex, opts)
               }
+              puts "SIDEKIQ ERROR HANDLERS SETUP!!!!!"
+              puts sidekiq.error_handlers
             end
           end
         end
